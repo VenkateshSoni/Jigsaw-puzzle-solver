@@ -1,4 +1,4 @@
-pandas==0.19.2
+pandas
 tensorflow
 keras
 opencv-python
