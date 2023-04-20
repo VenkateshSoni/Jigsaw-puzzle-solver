@@ -6,3 +6,4 @@ Pillow==9.5.0
 tensorflow==2.11.0
 streamlit
 protobuf==3.19.6
+libgl1
