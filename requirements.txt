@@ -1,7 +1,8 @@
-pandas
+pandas==0.19.2
 tensorflow
 keras
 opencv-python
 numpy
 matplotlib
 pillow
+protobuf~=3.19.0
