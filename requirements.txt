@@ -6,3 +6,4 @@ numpy
 matplotlib
 pillow
 protobuf~=3.19.0
+streamlib
