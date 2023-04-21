@@ -8,7 +8,7 @@ from PIL import Image
 import matplotlib
 
 with open('model_faces.h5', 'rb') as f:
-    model = load_model('../model_faces.h5')
+    model = load_model('model_faces.h5')
 
 def load_images_faces_test(ima):
     ret = []
