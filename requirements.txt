@@ -5,3 +5,4 @@ pandas==1.5.2
 Pillow==9.5.0
 tensorflow==2.11.0
 protobuf==3.19.6
+opencv-python
