@@ -7,8 +7,6 @@ import cv2
 from PIL import Image
 import matplotlib
 
-export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
-
 with open('model_faces.h5', 'rb') as f:
     model = load_model('model_faces.h5')
 
@@ -96,3 +94,6 @@ if uploaded_file is not None:
 
     with col2:
         st.image(pred, caption="Predicted Image", clamp=False, channels="RGB", output_format="auto")
+
+
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
