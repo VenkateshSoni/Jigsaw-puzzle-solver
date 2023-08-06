@@ -94,6 +94,3 @@ if uploaded_file is not None:
 
     with col2:
         st.image(pred, caption="Predicted Image", clamp=False, channels="RGB", output_format="auto")
-
-
-export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
