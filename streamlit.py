@@ -7,6 +7,8 @@ import cv2
 from PIL import Image
 import matplotlib
 
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
+
 with open('model_faces.h5', 'rb') as f:
     model = load_model('model_faces.h5')
 
