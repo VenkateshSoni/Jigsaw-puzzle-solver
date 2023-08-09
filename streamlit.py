@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 import cv2
 from PIL import Image
 import matplotlib
+import os
+from os.path import join as pathjoin
 
 with open('model_faces.h5', 'rb') as f:
     model = load_model('model_faces.h5')
@@ -64,29 +66,23 @@ def predict(filename, image):
 
 st.title('Jigsaw Puzzle Solver: ')
 
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg","jpeg","png"])
+sample_images_folder = r'C:/Users/soniv/Desktop/Projects/Jigsaw-puzzle-solver/test_img_samples/'
+sample_image_files = os.listdir(sample_images_folder)
 
-if uploaded_file is not None:
-    # Read the image
-    img_bytes = uploaded_file.read()
-    buffer_size = len(img_bytes)
-    # Ensure buffer size is a multiple of element size
-    buffer_size -= buffer_size % np.dtype(np.uint8).itemsize
-    image = cv2.imdecode(np.frombuffer(img_bytes[:buffer_size], np.uint8), 1)
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    
-    filename = uploaded_file.name
+selected_image = st.selectbox("Select a sample image:", sample_image_files)
+image_path = pathjoin(sample_images_folder, selected_image)
 
+img_bytes = open(image_path, "rb").read()
+buffer_size = len(img_bytes)
+buffer_size -= buffer_size % np.dtype(np.uint8).itemsize
+image = cv2.imdecode(np.frombuffer(img_bytes[:buffer_size], np.uint8), 1)
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+filename = selected_image
+
+if st.button("Process Image"):
     # Make the prediction
     pred = predict(filename, image)
-
-    # fig, ax = plt.subplots(1, 2)
-    # ax[0].imshow(image)
-    # ax[0].set_title("puzzle")
-    # ax[1].imshow(pred)
-    # ax[1].set_title("predicted")
-    
-    # st.pyplot(fig)
 
     col1, col2 = st.columns(2)
     with col1:
