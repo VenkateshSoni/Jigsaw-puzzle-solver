@@ -66,7 +66,7 @@ def predict(filename, image):
 
 st.title('Jigsaw Puzzle Solver: ')
 
-sample_images_folder = r'C:/Users/soniv/Desktop/Projects/Jigsaw-puzzle-solver/test_img_samples/'
+sample_images_folder = r'test_img_samples/'
 sample_image_files = os.listdir(sample_images_folder)
 
 selected_image = st.selectbox("Select a sample image:", sample_image_files)
