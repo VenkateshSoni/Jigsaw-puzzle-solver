@@ -1,8 +1,7 @@
 # Jigsaw Puzzle Solver using Deep Learning
+A deep learning and permutatin learning based jigsaw puzzle solver.
 
-ChatSentiment is a Streamlit web application for analyzing the sentiment of chat messages. It uses the Hugging Face Llama model for generating responses and TextBlob for sentiment analysis.
-
-### Try the streamlit app: https://chatsentiment.streamlit.app/
+### Try the streamlit app: https://jigsaw-puzzle-solver.streamlit.app/
 
 ## Installation
 
